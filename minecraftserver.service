@@ -1,0 +1,16 @@
+[Unit]
+Description=Minecraft server autostart service
+After=network.target
+
+[Service]
+Type=oneshot
+User=mcserver
+Group=mcserver
+ExecStart=/usr/bin/bash /opt/mcserver/startserver.sh
+ExecStop=/usr/bin/bash /opt/mcserver/stopserver.sh
+RestartSec=8s
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
