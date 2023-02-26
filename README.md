@@ -36,6 +36,9 @@ total 38356
 In case it skipped your mind dear Linux/GNU master, you gotta make those shell scripts executable!
 
 
+> NOTE: Inside of startserver.sh, you'll be able to edit your java parameters.
+
+
 5. As root, place the minecraftserver.service file into the /etc/systemd/system/ directory.
 ``` sh
 $ ls -l /etc/systemd/system/
