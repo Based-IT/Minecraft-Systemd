@@ -33,6 +33,8 @@ total 38356
 ...
 ```
 
+In case it skipped your mind dear Linux/GNU master, you gotta make those shell scripts executable!
+
 
 5. As root, place the minecraftserver.service file into the /etc/systemd/system/ directory.
 ``` sh
