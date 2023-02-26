@@ -8,7 +8,7 @@ Scripts and associated files to startup a Minecraft server with systemd
 
 2. Create the directory `/opt/mcserver/` as mcserver.
 
-3. Install a Minecraft server like normal into `/opt/mcserver/` as the mcserver user. Once configured, stop the server. <br>
+3. Install a Minecraft server like normal into `/opt/mcserver/` as the mcserver user. Rename the server jar file to server.jar. Once configured, make sure the server is stopped. <br>
   Just to reiterate - as mcserver. I want your directory to look like this:
   
 ``` sh 
