@@ -54,7 +54,7 @@ total 168
  $ vi /etc/systemd/logind.conf
 
   ```
-  - uncomment the line "KillExcludeUsers" under {Login}
+  - uncomment the line "KillExcludeUsers" under [Login]
 
 ``` conf
 [Login]
