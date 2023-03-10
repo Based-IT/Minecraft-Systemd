@@ -4,12 +4,12 @@ Scripts and associated files to startup a Minecraft server with systemd
 
 ## Usage:
 
-1. Create a non-sudoers user account named mcserver. Don't make your password weak because this will make me angry.
+1. Create a non-sudoers user account named mcserver.
 
 2. Create the directory `/opt/mcserver/` as mcserver.
 
-3. Install a Minecraft server like normal into `/opt/mcserver/` as the mcserver user. Rename the server jar file to server.jar. Once configured, make sure the server is stopped. <br>
-  Just to reiterate - as mcserver. I want your directory to look like this:
+3. Install a Minecraft server in the directory `/opt/mcserver/` as the mcserver user. Rename the server jar file to server.jar. Once configured, make sure the server is stopped. <br>
+  Just to reiterate - make sure this is done as mcserver. The directory should look like this:
   
 ``` sh 
 $ ls -l /opt/mcserver/
@@ -33,7 +33,7 @@ total 38356
 ...
 ```
 
-In case it skipped your mind dear Linux/GNU master, you gotta make those shell scripts executable!
+Make sure both shell scripts are executable.
 
 
 > NOTE: Inside of startserver.sh, you'll be able to edit your java parameters.
@@ -54,7 +54,7 @@ total 168
  $ vi /etc/systemd/logind.conf
 
   ```
-  - uncomment the line "KillExcludeUsers"
+  - uncomment the line "KillExcludeUsers" under {Login}
 
 ``` conf
 [Login]
@@ -66,7 +66,7 @@ KillExcludeUsers=root
 ...
 ```
   
-  - add the user mcserver to the line
+  - add the user mcserver
 
 ``` conf
 [Login]
@@ -108,4 +108,4 @@ From there, type:
 
 To end interaction with the server, use the screen keyboard shortcut `Ctrl+a+d` or `Ctrl+d+a`.
 
-For remote interaction with the server, I recommend setting up SSH access only for the mcserver user account. Use a random port, and a very strong password like "M92Llja!@#4N". If you don't know what you're doing, use TeamViewer.
+For remote interaction with the server, I recommend setting up SSH access only for the mcserver user account (do not enable ssh login as root). Use a random port, and a very strong password as it will be attacked by internet sweeps. If you don't know what you're doing, use a friendlier solution like TeamViewer.
